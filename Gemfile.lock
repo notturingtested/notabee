@@ -90,7 +90,7 @@ GEM
     msgpack (1.4.2)
     mysql2 (0.5.3)
     nio4r (2.5.8)
-    nokogiri (1.12.4)
+    nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     puma (4.3.8)
@@ -175,11 +175,10 @@ DEPENDENCIES
   rails (~> 6.0.4, >= 6.0.4.1)
   spring
   spring-watcher-listen (~> 2.0.0)
-  tzinfo-data
   vite_rails
 
 RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   1.17.3
+   2.1.4

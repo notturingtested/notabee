@@ -5,28 +5,17 @@ import axios from 'axios'
 
 
 
-const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3001',
-})
 
-Vue.config.productionTip = false
 
-Vue.prototype.$axios = axiosInstance
+// const axiosInstance = axios.create({
+//   baseURL: 'http://localhost:3001',
+// })
 
+// Vue.config.productionTip = false
+
+// Vue.prototype.$axios = axiosInstance
+console.log('hit entrypoint')
 new Vue({
-  vuetify,
+  // vuetify,
   render: h => h(App)
 }).$mount('#app')
-
-
-createInertiaApp({
-  resolve,
-  setup ({ el, app, props }) {
-    new Vue({
-      metaInfo: {
-        titleTemplate: title => title ? `${title} - PingCRM on Vite Ruby` : 'PingCRM on Vite Ruby',
-      },
-      render: h => h(app, props),
-    }).$mount(el)
-  },
-})

@@ -1753,3 +1753,588 @@ puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
 puma (4.3.8) lib/puma/server.rb:472:in `process_client'
 puma (4.3.8) lib/puma/server.rb:328:in `block in run'
 puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `testdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNotes (20210922022052)
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE `notes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX `index_notes_on_title`  ON `notes` (`title`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210922022052')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-09 03:25:43.708950', '2021-10-09 03:25:43.708950')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 1', 'A little more than kin, and less than kind.', '2021-10-09 03:25:51.821578', '2021-10-09 03:25:51.821578')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 2', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 03:25:51.832111', '2021-10-09 03:25:51.832111')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 3', 'What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.', '2021-10-09 03:25:51.839786', '2021-10-09 03:25:51.839786')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 4', 'Though this be madness, yet there is method in\'t.', '2021-10-09 03:25:51.846552', '2021-10-09 03:25:51.846552')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 5', 'A little more than kin, and less than kind.', '2021-10-09 03:25:51.854395', '2021-10-09 03:25:51.854395')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 6', 'I will speak daggers to her but use none.', '2021-10-09 03:25:51.862326', '2021-10-09 03:25:51.862326')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 7', 'To be, or not to be, that is the question', '2021-10-09 03:25:51.871367', '2021-10-09 03:25:51.871367')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 8', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 03:25:51.880152', '2021-10-09 03:25:51.880152')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 9', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 03:25:51.887317', '2021-10-09 03:25:51.887317')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.3ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 10', 'A little more than kin, and less than kind.', '2021-10-09 03:25:51.893901', '2021-10-09 03:25:51.893901')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 11', 'The lady doth protest too much, methinks.', '2021-10-09 03:25:51.900734', '2021-10-09 03:25:51.900734')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 12', 'What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.', '2021-10-09 03:25:51.908925', '2021-10-09 03:25:51.908925')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 13', 'To be, or not to be, that is the question', '2021-10-09 03:25:51.916907', '2021-10-09 03:25:51.916907')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 14', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 03:25:51.924159', '2021-10-09 03:25:51.924159')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.3ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 15', 'That it should come to this!', '2021-10-09 03:25:51.933160', '2021-10-09 03:25:51.933160')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.18.0.1 at 2021-10-09 03:26:04 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 20.6ms | Allocations: 467)
+Completed 200 OK in 148ms (Views: 71.8ms | ActiveRecord: 0.0ms | Allocations: 2608)
+
+
+Started GET "/favicon.ico" for 172.18.0.1 at 2021-10-09 03:26:04 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+vite_ruby (3.0.0) lib/vite_ruby/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 172.18.0.1 at 2021-10-09 03:26:12 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.7ms | Allocations: 185)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 760)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (23.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `devdb`[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `testdb`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `testdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNotes (20210922022052)
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `notes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE  INDEX `index_notes_on_title`  ON `notes` (`title`) [0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210922022052')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-09 04:38:37.073431', '2021-10-09 04:38:37.073431')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 1', 'The play\'s the thing wherein I\'ll catch the conscience of the king.', '2021-10-09 04:38:46.534170', '2021-10-09 04:38:46.534170')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.2ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 2', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:38:46.548343', '2021-10-09 04:38:46.548343')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 3', 'Brevity is the soul of wit.', '2021-10-09 04:38:46.566030', '2021-10-09 04:38:46.566030')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.1ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 4', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:38:46.579496', '2021-10-09 04:38:46.579496')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 5', 'Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry.', '2021-10-09 04:38:46.595764', '2021-10-09 04:38:46.595764')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.0ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 6', 'Though this be madness, yet there is method in\'t.', '2021-10-09 04:38:46.608754', '2021-10-09 04:38:46.608754')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 7', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:38:46.620714', '2021-10-09 04:38:46.620714')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 8', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:38:46.631228', '2021-10-09 04:38:46.631228')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 9', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 04:38:46.640631', '2021-10-09 04:38:46.640631')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 10', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 04:38:46.673412', '2021-10-09 04:38:46.673412')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 11', 'Though this be madness, yet there is method in\'t.', '2021-10-09 04:38:46.684551', '2021-10-09 04:38:46.684551')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 12', 'Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry.', '2021-10-09 04:38:46.694897', '2021-10-09 04:38:46.694897')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 13', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:38:46.704328', '2021-10-09 04:38:46.704328')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 14', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:38:46.714292', '2021-10-09 04:38:46.714292')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 15', 'Doubt thou the stars are fire, doubt that the sun doth move, doubt truth to be a liar, but never doubt I love.', '2021-10-09 04:38:46.724071', '2021-10-09 04:38:46.724071')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.18.0.1 at 2021-10-09 04:38:51 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.0ms | Allocations: 467)
+Completed 200 OK in 79ms (Views: 48.8ms | ActiveRecord: 0.0ms | Allocations: 2606)
+
+
+Started GET "/favicon.ico" for 172.18.0.1 at 2021-10-09 04:38:52 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+vite_ruby (3.0.0) lib/vite_ruby/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (20.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `devdb`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `testdb`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `testdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNotes (20210922022052)
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `notes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE  INDEX `index_notes_on_title`  ON `notes` (`title`) [0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210922022052')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-09 04:48:15.039719', '2021-10-09 04:48:15.039719')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 1', 'There is nothing either good or bad, but thinking makes it so.', '2021-10-09 04:48:19.054722', '2021-10-09 04:48:19.054722')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 2', 'I will speak daggers to her but use none.', '2021-10-09 04:48:19.067245', '2021-10-09 04:48:19.067245')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 3', 'Brevity is the soul of wit.', '2021-10-09 04:48:19.078570', '2021-10-09 04:48:19.078570')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 4', 'This above all: to thine own self be true, and it must follow, as the night the day, thou canst not then be false to any man.', '2021-10-09 04:48:19.087397', '2021-10-09 04:48:19.087397')[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 5', 'Brevity is the soul of wit.', '2021-10-09 04:48:19.099910', '2021-10-09 04:48:19.099910')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.0ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 6', 'There is nothing either good or bad, but thinking makes it so.', '2021-10-09 04:48:19.112083', '2021-10-09 04:48:19.112083')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 7', 'The lady doth protest too much, methinks.', '2021-10-09 04:48:19.127198', '2021-10-09 04:48:19.127198')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 8', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 04:48:19.154418', '2021-10-09 04:48:19.154418')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 9', 'The play\'s the thing wherein I\'ll catch the conscience of the king.', '2021-10-09 04:48:19.166742', '2021-10-09 04:48:19.166742')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 10', 'Though this be madness, yet there is method in\'t.', '2021-10-09 04:48:19.176845', '2021-10-09 04:48:19.176845')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 11', 'Though this be madness, yet there is method in\'t.', '2021-10-09 04:48:19.186467', '2021-10-09 04:48:19.186467')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 12', 'There is nothing either good or bad, but thinking makes it so.', '2021-10-09 04:48:19.196258', '2021-10-09 04:48:19.196258')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 13', 'A little more than kin, and less than kind.', '2021-10-09 04:48:19.206444', '2021-10-09 04:48:19.206444')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 14', 'Brevity is the soul of wit.', '2021-10-09 04:48:19.216287', '2021-10-09 04:48:19.216287')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 15', 'Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry.', '2021-10-09 04:48:19.225799', '2021-10-09 04:48:19.225799')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (14.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS `devdb`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `testdb`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `testdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNotes (20210922022052)
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE `notes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE  INDEX `index_notes_on_title`  ON `notes` (`title`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210922022052')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-09 04:49:09.783086', '2021-10-09 04:49:09.783086')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 1', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:49:13.176978', '2021-10-09 04:49:13.176978')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 2', 'What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.', '2021-10-09 04:49:13.184905', '2021-10-09 04:49:13.184905')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 3', 'What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.', '2021-10-09 04:49:13.192516', '2021-10-09 04:49:13.192516')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 4', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:49:13.199912', '2021-10-09 04:49:13.199912')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 5', 'That it should come to this!', '2021-10-09 04:49:13.206539', '2021-10-09 04:49:13.206539')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 6', 'The lady doth protest too much, methinks.', '2021-10-09 04:49:13.213728', '2021-10-09 04:49:13.213728')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 7', 'The lady doth protest too much, methinks.', '2021-10-09 04:49:13.223320', '2021-10-09 04:49:13.223320')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 8', 'A little more than kin, and less than kind.', '2021-10-09 04:49:13.231993', '2021-10-09 04:49:13.231993')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 9', 'Though this be madness, yet there is method in\'t.', '2021-10-09 04:49:13.253769', '2021-10-09 04:49:13.253769')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 10', 'This above all: to thine own self be true, and it must follow, as the night the day, thou canst not then be false to any man.', '2021-10-09 04:49:13.262596', '2021-10-09 04:49:13.262596')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 11', 'Brevity is the soul of wit.', '2021-10-09 04:49:13.272106', '2021-10-09 04:49:13.272106')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 12', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:49:13.280409', '2021-10-09 04:49:13.280409')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 13', 'Doubt thou the stars are fire, doubt that the sun doth move, doubt truth to be a liar, but never doubt I love.', '2021-10-09 04:49:13.288735', '2021-10-09 04:49:13.288735')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 14', 'Though this be madness, yet there is method in\'t.', '2021-10-09 04:49:13.296388', '2021-10-09 04:49:13.296388')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 15', 'What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.', '2021-10-09 04:49:13.304317', '2021-10-09 04:49:13.304317')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.18.0.1 at 2021-10-09 04:49:26 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.5ms | Allocations: 308)
+Completed 200 OK in 26ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 1611)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (21.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `devdb`[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS `testdb`[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `testdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNotes (20210922022052)
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE `notes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE  INDEX `index_notes_on_title`  ON `notes` (`title`) [0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210922022052')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-09 04:54:31.177648', '2021-10-09 04:54:31.177648')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 1', 'Doubt thou the stars are fire, doubt that the sun doth move, doubt truth to be a liar, but never doubt I love.', '2021-10-09 04:54:35.581440', '2021-10-09 04:54:35.581440')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 2', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:54:35.592064', '2021-10-09 04:54:35.592064')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 3', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:54:35.602128', '2021-10-09 04:54:35.602128')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 4', 'Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry.', '2021-10-09 04:54:35.612662', '2021-10-09 04:54:35.612662')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 5', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:54:35.621984', '2021-10-09 04:54:35.621984')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 6', 'To be, or not to be, that is the question', '2021-10-09 04:54:35.631123', '2021-10-09 04:54:35.631123')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 7', 'That it should come to this!', '2021-10-09 04:54:35.640483', '2021-10-09 04:54:35.640483')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 8', 'The play\'s the thing wherein I\'ll catch the conscience of the king.', '2021-10-09 04:54:35.650963', '2021-10-09 04:54:35.650963')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 9', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 04:54:35.674403', '2021-10-09 04:54:35.674403')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 10', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:54:35.683778', '2021-10-09 04:54:35.683778')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 11', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:54:35.692528', '2021-10-09 04:54:35.692528')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.3ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 12', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:54:35.701103', '2021-10-09 04:54:35.701103')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 13', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:54:35.711429', '2021-10-09 04:54:35.711429')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 14', 'There is nothing either good or bad, but thinking makes it so.', '2021-10-09 04:54:35.720458', '2021-10-09 04:54:35.720458')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 15', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:54:35.749223', '2021-10-09 04:54:35.749223')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (21.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `devdb`[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `testdb`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `testdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNotes (20210922022052)
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `notes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE  INDEX `index_notes_on_title`  ON `notes` (`title`) [0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210922022052')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-09 04:56:34.740666', '2021-10-09 04:56:34.740666')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 1', 'To be, or not to be, that is the question', '2021-10-09 04:56:38.232241', '2021-10-09 04:56:38.232241')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 2', 'What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.', '2021-10-09 04:56:38.239102', '2021-10-09 04:56:38.239102')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 3', 'To be, or not to be, that is the question', '2021-10-09 04:56:38.246199', '2021-10-09 04:56:38.246199')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 4', 'Doubt thou the stars are fire, doubt that the sun doth move, doubt truth to be a liar, but never doubt I love.', '2021-10-09 04:56:38.253802', '2021-10-09 04:56:38.253802')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (7.1ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 5', 'Do you think I am easier to be played on than a pipe?', '2021-10-09 04:56:38.268495', '2021-10-09 04:56:38.268495')[0m
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.2ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 6', 'A little more than kin, and less than kind.', '2021-10-09 04:56:38.512099', '2021-10-09 04:56:38.512099')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.0ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 7', 'A little more than kin, and less than kind.', '2021-10-09 04:56:38.568566', '2021-10-09 04:56:38.568566')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.0ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 8', 'What a piece of work is man! How noble in reason, how infinite in faculty! In form and moving how express and admirable! In action how like an angel, in apprehension how like a god! The beauty of the world. The paragon of animals.', '2021-10-09 04:56:38.585800', '2021-10-09 04:56:38.585800')[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.1ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 9', 'The play\'s the thing wherein I\'ll catch the conscience of the king.', '2021-10-09 04:56:38.603463', '2021-10-09 04:56:38.603463')[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (1.3ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 10', 'To be, or not to be, that is the question', '2021-10-09 04:56:38.632119', '2021-10-09 04:56:38.632119')[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 11', 'Brevity is the soul of wit.', '2021-10-09 04:56:38.658213', '2021-10-09 04:56:38.658213')[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 12', 'Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry.', '2021-10-09 04:56:38.673139', '2021-10-09 04:56:38.673139')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 13', 'Doubt thou the stars are fire, doubt that the sun doth move, doubt truth to be a liar, but never doubt I love.', '2021-10-09 04:56:38.685845', '2021-10-09 04:56:38.685845')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 14', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 04:56:38.695229', '2021-10-09 04:56:38.695229')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 15', 'To be, or not to be, that is the question', '2021-10-09 04:56:38.704660', '2021-10-09 04:56:38.704660')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (19.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `devdb`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `testdb`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `devdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `testdb` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('2901669337233075780', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateNotes (20210922022052)
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE `notes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE  INDEX `index_notes_on_title`  ON `notes` (`title`) [0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210922022052')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-10-09 05:06:36.213300', '2021-10-09 05:06:36.213300')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('2901669337233075780')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 1', 'That it should come to this!', '2021-10-09 05:06:40.104276', '2021-10-09 05:06:40.104276')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 2', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 05:06:40.113252', '2021-10-09 05:06:40.113252')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 3', 'The play\'s the thing wherein I\'ll catch the conscience of the king.', '2021-10-09 05:06:40.121314', '2021-10-09 05:06:40.121314')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 4', 'The play\'s the thing wherein I\'ll catch the conscience of the king.', '2021-10-09 05:06:40.128764', '2021-10-09 05:06:40.128764')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 5', 'This above all: to thine own self be true, and it must follow, as the night the day, thou canst not then be false to any man.', '2021-10-09 05:06:40.138244', '2021-10-09 05:06:40.138244')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 6', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 05:06:40.146543', '2021-10-09 05:06:40.146543')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 7', 'Doubt thou the stars are fire, doubt that the sun doth move, doubt truth to be a liar, but never doubt I love.', '2021-10-09 05:06:40.167625', '2021-10-09 05:06:40.167625')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 8', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 05:06:40.176636', '2021-10-09 05:06:40.176636')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 9', 'Though this be madness, yet there is method in\'t.', '2021-10-09 05:06:40.186082', '2021-10-09 05:06:40.186082')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 10', 'Brevity is the soul of wit.', '2021-10-09 05:06:40.193999', '2021-10-09 05:06:40.193999')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 11', 'Rich gifts wax poor when givers prove unkind.', '2021-10-09 05:06:40.201975', '2021-10-09 05:06:40.201975')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 12', 'To be, or not to be, that is the question', '2021-10-09 05:06:40.209632', '2021-10-09 05:06:40.209632')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 13', 'That it should come to this!', '2021-10-09 05:06:40.218053', '2021-10-09 05:06:40.218053')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.6ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 14', 'Neither a borrower nor a lender be; For loan oft loses both itself and friend, and borrowing dulls the edge of husbandry.', '2021-10-09 05:06:40.226180', '2021-10-09 05:06:40.226180')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO `notes` (`title`, `body`, `created_at`, `updated_at`) VALUES ('Hamlet Quote # 15', 'When sorrows come, they come not single spies but in battalions.', '2021-10-09 05:06:40.235249', '2021-10-09 05:06:40.235249')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m

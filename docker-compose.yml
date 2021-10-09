@@ -9,27 +9,33 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./notabee_mysql:/var/lib/notabee_mysql
-  notabee_api:
-    container_name: notabee_api
+    
+  rails:
+    build: .
     depends_on:
+      - vite
       - notabee_mysql
-    build:
-      context: ./
-      dockerfile: Dockerfile_api
+    entrypoint: ./docker-rails.sh
+    environment:
+      RAILS_ENV: development
+      VITE_RUBY_HOST: vite
     ports:
-      - "3001:3000"
+      - "3000:3000"
     volumes:
-      - ./:/usr/src/app/
-    entrypoint: ["sh", "rails_entrypoint.sh"]
-  notabee_frontend:
-    container_name: notabee_frontend
-    build:
-      context: ./
-      dockerfile: Dockerfile_frontend
+      - .:/app
+  vite:
+    build: .
+    entrypoint: ./docker-vite.sh
+    environment:
+      DEBUG: '*vite*'
+      RAILS_ENV: development
+      VITE_RUBY_HOST: 0.0.0.0
     ports:
       - "3036:3036"
-    stdin_open: true
     volumes:
-      - ./:/usr/src/app/
-      - /usr/src/app/node_modules
-    entrypoint: ["sh", "vite_entrypoint.sh"]
+      - .:/app
+      - /app/node_modules
+
+
+
+

@@ -1,7 +1,0 @@
-FROM ruby:2.6.6 AS api-build
-COPY . /usr/src/app/
-WORKDIR /usr/src/app/
-RUN apt-get update 
-RUN bundle install
-RUN chmod +x ./rails_entrypoint.sh
-EXPOSE 3000
